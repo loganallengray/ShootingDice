@@ -15,12 +15,8 @@ namespace ShootingDice
             Console.WriteLine("Your catchphrase? :");
             string playerDialogue = Console.ReadLine();
 
-            Console.WriteLine("Your dice size? : (Enter a number)");
-            string playerChoiceString = Console.ReadLine();
-            int.TryParse(playerChoiceString, out int playerChoice);
-
             // Human Player is created
-            Player player1 = new HumanPlayer(playerDialogue, playerChoice);
+            Player player1 = new HumanPlayer(playerDialogue);
             player1.Name = playerName;
 
             Player player2 = new Player();
@@ -36,14 +32,22 @@ namespace ShootingDice
             Player large = new LargeDicePlayer();
             large.Name = "Bigun Rollsalot";
 
+            Player smackTalker = new SmackTalkingPlayer();
+            smackTalker.Name = "Medium Mouth";
+
+            Player creativeSmackTalker = new CreativeSmackTalkingPlayer();
+            creativeSmackTalker.Name = "Big Mouth";
+
             Player oneHigher = new OneHigherPlayer();
             oneHigher.Name = "Johnny";
 
+            player1.Play(smackTalker);
+            player1.Play(creativeSmackTalker);
             player1.Play(large);
             player1.Play(oneHigher);
 
             List<Player> players = new List<Player>() {
-                player1, player2, player3, large, oneHigher
+                player1, player2, player3, smackTalker, creativeSmackTalker, large, oneHigher
             };
 
             PlayMany(players);
