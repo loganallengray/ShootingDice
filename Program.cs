@@ -47,6 +47,9 @@ namespace ShootingDice
             Player soreLoser = new SoreLoserPlayer();
             soreLoser.Name = "Logan";
 
+            Player soreLoserUpper = new SoreLoserUpperHalfPlayer();
+            soreLoserUpper.Name = "Logan 2.0";
+
             player1.Play(smackTalker);
             player1.Play(creativeSmackTalker);
             player1.Play(large);
@@ -61,9 +64,17 @@ namespace ShootingDice
             {
                 Console.WriteLine(ex.Message);
             }
+            try
+            {
+                player1.Play(soreLoserUpper);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
 
             List<Player> players = new List<Player>() {
-                player1, player2, player3, smackTalker, creativeSmackTalker, large, oneHigher, soreLoser, upperHalf
+                player1, player2, player3, smackTalker, creativeSmackTalker, large, oneHigher, soreLoser, upperHalf, soreLoserUpper
             };
 
             try

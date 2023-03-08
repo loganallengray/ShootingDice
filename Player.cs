@@ -46,7 +46,11 @@ namespace ShootingDice
             {
                 if (other.Dialogue == "Heh... This is going to be E-Z.")
                 {
-                    throw new Exception($"{Name}: ME??? LOSE??? NAH... THIS TABLE IS GETTING FLIPPED SON.");
+                    throw new Exception($"{other.Name}: ME??? LOSE??? NAH... THIS TABLE IS GETTING FLIPPED SON.");
+                }
+                else if (other.Dialogue == "Just so you know, if you beat me I'm actually going to cry.")
+                {
+                    throw new Exception($"{other.Name}: You CAN'T beat me I RIGGED these dice in MY favor, oh GOD here come the tears.");
                 }
                 else
                 {
