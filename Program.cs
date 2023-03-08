@@ -45,10 +45,10 @@ namespace ShootingDice
             upperHalf.Name = "Snooty Tootkins";
 
             Player soreLoser = new SoreLoserPlayer();
-            soreLoser.Name = "Logan";
+            soreLoser.Name = "Chuck";
 
             Player soreLoserUpper = new SoreLoserUpperHalfPlayer();
-            soreLoserUpper.Name = "Logan 2.0";
+            soreLoserUpper.Name = "Jimmy";
 
             player1.Play(smackTalker);
             player1.Play(creativeSmackTalker);
