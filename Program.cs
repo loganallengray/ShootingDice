@@ -8,29 +8,35 @@ namespace ShootingDice
     {
         static void Main(string[] args)
         {
-            Player player1 = new Player();
-            player1.Name = "Bob";
+            // Player options
+            Console.WriteLine("Your name? :");
+            string playerName = Console.ReadLine();
+
+            Console.WriteLine("Your catchphrase? :");
+            string playerDialogue = Console.ReadLine();
+
+            Console.WriteLine("Your dice size? : (Enter a number)");
+            string playerChoiceString = Console.ReadLine();
+            int.TryParse(playerChoiceString, out int playerChoice);
+
+            // Human Player is created
+            Player player1 = new HumanPlayer(playerDialogue, playerChoice);
+            player1.Name = playerName;
 
             Player player2 = new Player();
             player2.Name = "Sue";
 
             player2.Play(player1);
 
-            Console.WriteLine("-------------------");
-
             Player player3 = new Player();
             player3.Name = "Wilma";
 
             player3.Play(player2);
 
-            Console.WriteLine("-------------------");
-
             Player large = new LargeDicePlayer();
             large.Name = "Bigun Rollsalot";
 
             player1.Play(large);
-
-            Console.WriteLine("-------------------");
 
             List<Player> players = new List<Player>() {
                 player1, player2, player3, large
@@ -60,8 +66,6 @@ namespace ShootingDice
             // Loop over the players 2 at a time
             for (int i = 0; i < maxIndex; i += 2)
             {
-                Console.WriteLine("-------------------");
-
                 // Make adjacent players play noe another
                 Player player1 = shuffledPlayers[i];
                 Player player2 = shuffledPlayers[i + 1];
