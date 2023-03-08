@@ -44,7 +44,14 @@ namespace ShootingDice
 
             if (myRoll > otherRoll)
             {
-                Console.WriteLine($"{Name} Wins!");
+                if (other.Dialogue == "Heh... This is going to be E-Z.")
+                {
+                    throw new Exception($"{Name}: ME??? LOSE??? NAH... THIS TABLE IS GETTING FLIPPED SON.");
+                }
+                else
+                {
+                    Console.WriteLine($"{Name} Wins!");
+                }
             }
             else if (myRoll < otherRoll)
             {

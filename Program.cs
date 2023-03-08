@@ -41,16 +41,35 @@ namespace ShootingDice
             Player oneHigher = new OneHigherPlayer();
             oneHigher.Name = "Johnny";
 
+            Player soreLoser = new SoreLoserPlayer();
+            soreLoser.Name = "Logan";
+
             player1.Play(smackTalker);
             player1.Play(creativeSmackTalker);
             player1.Play(large);
             player1.Play(oneHigher);
 
+            try
+            {
+                player1.Play(soreLoser);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
             List<Player> players = new List<Player>() {
-                player1, player2, player3, smackTalker, creativeSmackTalker, large, oneHigher
+                player1, player2, player3, smackTalker, creativeSmackTalker, large, oneHigher, soreLoser
             };
 
-            PlayMany(players);
+            try
+            {
+                PlayMany(players);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         static void PlayMany(List<Player> players)
